@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBSadraAfzarMessengerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MessengerContext" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="mesCompanyChange" ReturnType="Collection(DBSadraAfzarMessengerModel.mesCompanyChange_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="number" Mode="In" Type="String" />
+      <Parameter Name="ChangeDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="mesMessageShow" ReturnType="Collection(DBSadraAfzarMessengerModel.mesMessageShow_Result)">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="ChangeDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="mesStatusMessageChange" ReturnType="Collection(DBSadraAfzarMessengerModel.mesStatusMessageChange_Result)">
+      <Parameter Name="ChangeDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="mesTypeMessageChange" ReturnType="Collection(DBSadraAfzarMessengerModel.mesTypeMessageChange_Result)">
+      <Parameter Name="ChangeDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="mesCompanies" EntityType="DBSadraAfzarMessengerModel.mesCompany" />
+    <EntitySet Name="mesCompanyUsers" EntityType="DBSadraAfzarMessengerModel.mesCompanyUser" />
+    <EntitySet Name="mesDocuments" EntityType="DBSadraAfzarMessengerModel.mesDocument" />
+    <EntitySet Name="mesDocumentTypes" EntityType="DBSadraAfzarMessengerModel.mesDocumentType" />
+    <EntitySet Name="mesPanels" EntityType="DBSadraAfzarMessengerModel.mesPanel" />
+    <EntitySet Name="mesSettings" EntityType="DBSadraAfzarMessengerModel.mesSetting" />
+    <EntitySet Name="mesStatusMessages" EntityType="DBSadraAfzarMessengerModel.mesStatusMessage" />
+    <EntitySet Name="mesTypeMessages" EntityType="DBSadraAfzarMessengerModel.mesTypeMessage" />
+    <EntitySet Name="mesVersionings" EntityType="DBSadraAfzarMessengerModel.mesVersioning" />
+    <AssociationSet Name="FK_mesDocument_mesDocumentType" Association="DBSadraAfzarMessengerModel.FK_mesDocument_mesDocumentType">
+      <End Role="mesDocumentType" EntitySet="mesDocumentTypes" />
+      <End Role="mesDocument" EntitySet="mesDocuments" />
+    </AssociationSet>
+    <FunctionImport Name="mesCheckOnline">
+      <Parameter Name="FkfUser" Mode="In" Type="Int32" />
+      <Parameter Name="IsOnline" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="mesLogins" EntityType="DBSadraAfzarMessengerModel.mesLogin" />
+    <FunctionImport Name="mesMessageChange" ReturnType="Collection(DBSadraAfzarMessengerModel.mesMessageChange_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="ChangeDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="mesMessages" EntityType="DBSadraAfzarMessengerModel.mesMessage" />
+    <AssociationSet Name="FK_mesMessage_mesCompany" Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesCompany">
+      <End Role="mesCompany" EntitySet="mesCompanies" />
+      <End Role="mesMessage" EntitySet="mesMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesDocument_mesMessage" Association="DBSadraAfzarMessengerModel.FK_mesDocument_mesMessage">
+      <End Role="mesMessage" EntitySet="mesMessages" />
+      <End Role="mesDocument" EntitySet="mesDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesDocument" Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesDocument">
+      <End Role="mesDocument" EntitySet="mesDocuments" />
+      <End Role="mesMessage" EntitySet="mesMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesStatusMessage" Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesStatusMessage">
+      <End Role="mesStatusMessage" EntitySet="mesStatusMessages" />
+      <End Role="mesMessage" EntitySet="mesMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesTypeMessage" Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesTypeMessage">
+      <End Role="mesTypeMessage" EntitySet="mesTypeMessages" />
+      <End Role="mesMessage" EntitySet="mesMessages" />
+    </AssociationSet>
+    <EntitySet Name="mesUsers" EntityType="DBSadraAfzarMessengerModel.mesUser" />
+    <AssociationSet Name="FK_mesLogin_mesUser" Association="DBSadraAfzarMessengerModel.FK_mesLogin_mesUser">
+      <End Role="mesUser" EntitySet="mesUsers" />
+      <End Role="mesLogin" EntitySet="mesLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesUser" Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesUser">
+      <End Role="mesUser" EntitySet="mesUsers" />
+      <End Role="mesMessage" EntitySet="mesMessages" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="mesCompanyChange_Result">
+    <Property Type="Int32" Name="pkfCompany" Nullable="false" />
+    <Property Type="String" Name="companyName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="number" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="CountAll" Nullable="true" />
+    <Property Type="Int32" Name="CountSend" Nullable="true" />
+    <Property Type="Int32" Name="CountRecive" Nullable="true" />
+    <Property Type="Int32" Name="CountShow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="mesMessageShow_Result">
+    <Property Type="Int32" Name="pkfMessage" Nullable="false" />
+    <Property Type="Int32" Name="FkfUser" Nullable="true" />
+    <Property Type="String" Name="message" Nullable="false" />
+    <Property Type="Int32" Name="FkfStatusMessage" Nullable="true" />
+    <Property Type="Int32" Name="FkfTypeMessage" Nullable="true" />
+    <Property Type="Int32" Name="FkfSource" Nullable="true" />
+    <Property Type="Int32" Name="FkfCompanyId" Nullable="true" />
+    <Property Type="Boolean" Name="isDelete" Nullable="false" />
+    <Property Type="Int32" Name="FkfDocument" Nullable="true" />
+    <Property Type="DateTime" Name="changeDateEN" Nullable="false" Precision="23" />
+    <Property Type="String" Name="statusMessage" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="typeMessage" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="companyName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="mesStatusMessageChange_Result">
+    <Property Type="Int32" Name="pkfStatusMessage" Nullable="false" />
+    <Property Type="String" Name="statusMessage" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="statusMessageCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="memo" Nullable="false" />
+    <Property Type="DateTime" Name="changeDateEN" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="mesTypeMessageChange_Result">
+    <Property Type="Int32" Name="pkfTypeMessage" Nullable="false" />
+    <Property Type="String" Name="typeMessage" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="typeMessageCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="memo" Nullable="false" />
+    <Property Type="DateTime" Name="changeDateEN" Nullable="false" Precision="23" />
+  </ComplexType>
+  <EntityType Name="mesCompany">
+    <Key>
+      <PropertyRef Name="pkfCompany" />
+    </Key>
+    <Property Name="pkfCompany" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="serialIdCompany" Type="Int32" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="picName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="changeDateEN" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mesMessages" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesCompany" FromRole="mesCompany" ToRole="mesMessage" />
+  </EntityType>
+  <EntityType Name="mesCompanyUser">
+    <Key>
+      <PropertyRef Name="pkfCompanyUser" />
+    </Key>
+    <Property Name="pkfCompanyUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="number" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FkfCompany" Type="Int32" />
+    <Property Name="validyDateUser" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesDocument">
+    <Key>
+      <PropertyRef Name="pkfDocument" />
+    </Key>
+    <Property Name="pkfDocument" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FkfMessage" Type="Int32" Nullable="false" />
+    <Property Name="FkfDocumentType" Type="Int32" Nullable="false" />
+    <Property Name="fileScan" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="memo" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="fileExt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fileSize" Type="Int32" />
+    <NavigationProperty Name="mesDocumentType" Relationship="DBSadraAfzarMessengerModel.FK_mesDocument_mesDocumentType" FromRole="mesDocument" ToRole="mesDocumentType" />
+    <NavigationProperty Name="mesMessage" Relationship="DBSadraAfzarMessengerModel.FK_mesDocument_mesMessage" FromRole="mesDocument" ToRole="mesMessage" />
+    <NavigationProperty Name="mesMessages" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesDocument" FromRole="mesDocument" ToRole="mesMessage" />
+  </EntityType>
+  <EntityType Name="mesDocumentType">
+    <Key>
+      <PropertyRef Name="pkfDocumentType" />
+    </Key>
+    <Property Name="pkfDocumentType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="documentType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mesDocuments" Relationship="DBSadraAfzarMessengerModel.FK_mesDocument_mesDocumentType" FromRole="mesDocumentType" ToRole="mesDocument" />
+  </EntityType>
+  <EntityType Name="mesPanel">
+    <Key>
+      <PropertyRef Name="pkfPanel" />
+    </Key>
+    <Property Name="pkfPanel" Type="Int32" Nullable="false" />
+    <Property Name="PanelName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UserPass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mesSetting">
+    <Key>
+      <PropertyRef Name="pkfSetting" />
+    </Key>
+    <Property Name="pkfSetting" Type="Int32" Nullable="false" />
+    <Property Name="SendEmailManageEnable" Type="Boolean" />
+    <Property Name="SendEmailManageHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendEmailManagePort" Type="Int32" />
+    <Property Name="SendEmailManageUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendEmailManageUserPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendEmailManageFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SendEmailManageTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationFormVisit" Type="Boolean" />
+    <Property Name="ContactsInvitationText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ShowHelpForm" Type="Boolean" />
+    <Property Name="HelpMainUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ShowNotificationRepeat" Type="Int32" Nullable="false" />
+    <Property Name="InvitationPanelID" Type="Int32" />
+    <Property Name="MessageInstallInvitation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="InstallInvitationPanelID" Type="Int32" />
+    <Property Name="NumberSMSAddUser" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NumberSMSUpdateUser" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NumberSMSManagerPanelID" Type="Int32" />
+    <Property Name="NumberSMSManagerText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="serverKeyFireBase" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="senderIdFireBase" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="webAddr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mesStatusMessage">
+    <Key>
+      <PropertyRef Name="pkfStatusMessage" />
+    </Key>
+    <Property Name="pkfStatusMessage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statusMessage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="statusMessageCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="changeDateEN" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mesMessages" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesStatusMessage" FromRole="mesStatusMessage" ToRole="mesMessage" />
+  </EntityType>
+  <EntityType Name="mesTypeMessage">
+    <Key>
+      <PropertyRef Name="pkfTypeMessage" />
+    </Key>
+    <Property Name="pkfTypeMessage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeMessage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typeMessageCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="changeDateEN" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mesMessages" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesTypeMessage" FromRole="mesTypeMessage" ToRole="mesMessage" />
+  </EntityType>
+  <EntityType Name="mesVersioning">
+    <Key>
+      <PropertyRef Name="pkfVersioning" />
+    </Key>
+    <Property Name="pkfVersioning" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VersionCode" Type="Int32" Nullable="false" />
+    <Property Name="VersionName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ForceInstalling" Type="Boolean" Nullable="false" />
+    <Property Name="VersionDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_mesDocument_mesDocumentType">
+    <End Type="DBSadraAfzarMessengerModel.mesDocumentType" Role="mesDocumentType" Multiplicity="1" />
+    <End Type="DBSadraAfzarMessengerModel.mesDocument" Role="mesDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesDocumentType">
+        <PropertyRef Name="pkfDocumentType" />
+      </Principal>
+      <Dependent Role="mesDocument">
+        <PropertyRef Name="FkfDocumentType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mesLogin">
+    <Key>
+      <PropertyRef Name="pkfLogin" />
+    </Key>
+    <Property Name="pkfLogin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idConnectionSignalR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FkfUser" Type="Int32" Nullable="false" />
+    <Property Name="loginType" Type="Int32" Nullable="false" />
+    <Property Name="connectDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="disconnectDateTime" Type="DateTime" Precision="3" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="appVersion" Type="Int32" Nullable="false" />
+    <Property Name="androidVersion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mobileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mesUser" Relationship="DBSadraAfzarMessengerModel.FK_mesLogin_mesUser" FromRole="mesLogin" ToRole="mesUser" />
+  </EntityType>
+  <ComplexType Name="mesMessageChange_Result">
+    <Property Type="Int32" Name="pkfMessage" Nullable="false" />
+    <Property Type="Int32" Name="FkfUser" Nullable="true" />
+    <Property Type="String" Name="message" Nullable="false" />
+    <Property Type="Int32" Name="FkfStatusMessage" Nullable="true" />
+    <Property Type="Int32" Name="FkfTypeMessage" Nullable="true" />
+    <Property Type="Int32" Name="FkfSource" Nullable="true" />
+    <Property Type="Int32" Name="FkfCompanyId" Nullable="true" />
+    <Property Type="String" Name="sendDate" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="reciveDate" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="showDate" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ansswerDate" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="isDelete" Nullable="false" />
+    <Property Type="Int32" Name="FkfDocument" Nullable="true" />
+    <Property Type="Int32" Name="replay" Nullable="false" />
+    <Property Type="String" Name="sendTime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="reciveTime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="showTime" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ansswerTime" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="sendDateEN" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="reciveDateEN" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="showDateEN" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ansswerDateEN" Nullable="true" Precision="23" />
+    <Property Type="String" Name="replayDiscript" Nullable="false" />
+    <Property Type="Boolean" Name="IsFireBase" Nullable="false" />
+    <Property Type="DateTime" Name="changeDateEN" Nullable="false" Precision="23" />
+  </ComplexType>
+  <EntityType Name="mesMessage">
+    <Key>
+      <PropertyRef Name="pkfMessage" />
+    </Key>
+    <Property Name="pkfMessage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FkfUser" Type="Int32" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FkfStatusMessage" Type="Int32" />
+    <Property Name="FkfTypeMessage" Type="Int32" />
+    <Property Name="FkfSource" Type="Int32" />
+    <Property Name="FkfCompanyId" Type="Int32" />
+    <Property Name="sendDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reciveDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="showDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ansswerDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isDelete" Type="Boolean" Nullable="false" />
+    <Property Name="FkfDocument" Type="Int32" />
+    <Property Name="replay" Type="Int32" Nullable="false" />
+    <Property Name="sendTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reciveTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="showTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ansswerTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sendDateEN" Type="DateTime" Precision="3" />
+    <Property Name="reciveDateEN" Type="DateTime" Precision="3" />
+    <Property Name="showDateEN" Type="DateTime" Precision="3" />
+    <Property Name="ansswerDateEN" Type="DateTime" Precision="3" />
+    <Property Name="replayDiscript" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsFireBase" Type="Boolean" Nullable="false" />
+    <Property Name="changeDateEN" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mesCompany" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesCompany" FromRole="mesMessage" ToRole="mesCompany" />
+    <NavigationProperty Name="mesDocuments" Relationship="DBSadraAfzarMessengerModel.FK_mesDocument_mesMessage" FromRole="mesMessage" ToRole="mesDocument" />
+    <NavigationProperty Name="mesDocument" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesDocument" FromRole="mesMessage" ToRole="mesDocument" />
+    <NavigationProperty Name="mesStatusMessage" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesStatusMessage" FromRole="mesMessage" ToRole="mesStatusMessage" />
+    <NavigationProperty Name="mesTypeMessage" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesTypeMessage" FromRole="mesMessage" ToRole="mesTypeMessage" />
+    <NavigationProperty Name="mesUser" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesUser" FromRole="mesMessage" ToRole="mesUser" />
+  </EntityType>
+  <Association Name="FK_mesMessage_mesCompany">
+    <End Type="DBSadraAfzarMessengerModel.mesCompany" Role="mesCompany" Multiplicity="0..1" />
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesCompany">
+        <PropertyRef Name="pkfCompany" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfCompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesDocument_mesMessage">
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="1" />
+    <End Type="DBSadraAfzarMessengerModel.mesDocument" Role="mesDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesMessage">
+        <PropertyRef Name="pkfMessage" />
+      </Principal>
+      <Dependent Role="mesDocument">
+        <PropertyRef Name="FkfMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesDocument">
+    <End Type="DBSadraAfzarMessengerModel.mesDocument" Role="mesDocument" Multiplicity="0..1" />
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesDocument">
+        <PropertyRef Name="pkfDocument" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfDocument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesStatusMessage">
+    <End Type="DBSadraAfzarMessengerModel.mesStatusMessage" Role="mesStatusMessage" Multiplicity="0..1" />
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesStatusMessage">
+        <PropertyRef Name="pkfStatusMessage" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfStatusMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesTypeMessage">
+    <End Type="DBSadraAfzarMessengerModel.mesTypeMessage" Role="mesTypeMessage" Multiplicity="0..1" />
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesTypeMessage">
+        <PropertyRef Name="pkfTypeMessage" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfTypeMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mesUser">
+    <Key>
+      <PropertyRef Name="pkfUser" />
+    </Key>
+    <Property Name="pkfUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="famile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="picName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActiveCode" Type="Int32" />
+    <Property Name="UserActive" Type="Boolean" />
+    <Property Name="UserCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UserExpireDate" Type="DateTime" Precision="3" />
+    <Property Name="DeactiveAdministrator" Type="Boolean" />
+    <Property Name="PublicKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateKeyRefresh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrivateKeyExpire" Type="DateTime" Precision="3" />
+    <Property Name="tokenFireBase" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mesLogins" Relationship="DBSadraAfzarMessengerModel.FK_mesLogin_mesUser" FromRole="mesUser" ToRole="mesLogin" />
+    <NavigationProperty Name="mesMessages" Relationship="DBSadraAfzarMessengerModel.FK_mesMessage_mesUser" FromRole="mesUser" ToRole="mesMessage" />
+  </EntityType>
+  <Association Name="FK_mesLogin_mesUser">
+    <End Type="DBSadraAfzarMessengerModel.mesUser" Role="mesUser" Multiplicity="1" />
+    <End Type="DBSadraAfzarMessengerModel.mesLogin" Role="mesLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesUser">
+        <PropertyRef Name="pkfUser" />
+      </Principal>
+      <Dependent Role="mesLogin">
+        <PropertyRef Name="FkfUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesUser">
+    <End Type="DBSadraAfzarMessengerModel.mesUser" Role="mesUser" Multiplicity="0..1" />
+    <End Type="DBSadraAfzarMessengerModel.mesMessage" Role="mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesUser">
+        <PropertyRef Name="pkfUser" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

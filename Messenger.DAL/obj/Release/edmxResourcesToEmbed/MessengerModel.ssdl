@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBSadraAfzarMessengerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mesCompany">
+    <Key>
+      <PropertyRef Name="pkfCompany" />
+    </Key>
+    <Property Name="pkfCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="serialIdCompany" Type="int" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="pic" Type="varbinary(max)" />
+    <Property Name="picName" Type="nvarchar" MaxLength="50" />
+    <Property Name="pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="changeDateEN" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesCompanyUser">
+    <Key>
+      <PropertyRef Name="pkfCompanyUser" />
+    </Key>
+    <Property Name="pkfCompanyUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FkfCompany" Type="int" />
+    <Property Name="validyDateUser" Type="datetime" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesDocument">
+    <Key>
+      <PropertyRef Name="pkfDocument" />
+    </Key>
+    <Property Name="pkfDocument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FkfMessage" Type="int" Nullable="false" />
+    <Property Name="FkfDocumentType" Type="int" Nullable="false" />
+    <Property Name="fileScan" Type="varbinary(max)" />
+    <Property Name="memo" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="fileExt" Type="nvarchar" MaxLength="50" />
+    <Property Name="fileSize" Type="int" />
+  </EntityType>
+  <EntityType Name="mesDocumentType">
+    <Key>
+      <PropertyRef Name="pkfDocumentType" />
+    </Key>
+    <Property Name="pkfDocumentType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentType" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesLogin">
+    <Key>
+      <PropertyRef Name="pkfLogin" />
+    </Key>
+    <Property Name="pkfLogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idConnectionSignalR" Type="nvarchar" MaxLength="50" />
+    <Property Name="FkfUser" Type="int" Nullable="false" />
+    <Property Name="loginType" Type="int" Nullable="false" />
+    <Property Name="connectDateTime" Type="datetime" Nullable="false" />
+    <Property Name="disconnectDateTime" Type="datetime" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="appVersion" Type="int" Nullable="false" />
+    <Property Name="androidVersion" Type="nvarchar" MaxLength="100" />
+    <Property Name="mobileName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mesMessage">
+    <Key>
+      <PropertyRef Name="pkfMessage" />
+    </Key>
+    <Property Name="pkfMessage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FkfUser" Type="int" />
+    <Property Name="message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FkfStatusMessage" Type="int" />
+    <Property Name="FkfTypeMessage" Type="int" />
+    <Property Name="FkfSource" Type="int" />
+    <Property Name="FkfCompanyId" Type="int" />
+    <Property Name="sendDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reciveDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="showDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ansswerDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isDelete" Type="bit" Nullable="false" />
+    <Property Name="FkfDocument" Type="int" />
+    <Property Name="replay" Type="int" Nullable="false" />
+    <Property Name="sendTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reciveTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="showTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ansswerTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sendDateEN" Type="datetime" />
+    <Property Name="reciveDateEN" Type="datetime" />
+    <Property Name="showDateEN" Type="datetime" />
+    <Property Name="ansswerDateEN" Type="datetime" />
+    <Property Name="replayDiscript" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsFireBase" Type="bit" Nullable="false" />
+    <Property Name="changeDateEN" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesPanel">
+    <Key>
+      <PropertyRef Name="pkfPanel" />
+    </Key>
+    <Property Name="pkfPanel" Type="int" Nullable="false" />
+    <Property Name="PanelName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserPass" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesSetting">
+    <Key>
+      <PropertyRef Name="pkfSetting" />
+    </Key>
+    <Property Name="pkfSetting" Type="int" Nullable="false" />
+    <Property Name="SendEmailManageEnable" Type="bit" />
+    <Property Name="SendEmailManageHost" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendEmailManagePort" Type="int" />
+    <Property Name="SendEmailManageUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendEmailManageUserPass" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendEmailManageFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendEmailManageTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegistrationFormVisit" Type="bit" />
+    <Property Name="ContactsInvitationText" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShowHelpForm" Type="bit" />
+    <Property Name="HelpMainUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShowNotificationRepeat" Type="int" Nullable="false" />
+    <Property Name="InvitationPanelID" Type="int" />
+    <Property Name="MessageInstallInvitation" Type="nvarchar" MaxLength="500" />
+    <Property Name="InstallInvitationPanelID" Type="int" />
+    <Property Name="NumberSMSAddUser" Type="nvarchar" MaxLength="15" />
+    <Property Name="NumberSMSUpdateUser" Type="nvarchar" MaxLength="15" />
+    <Property Name="NumberSMSManagerPanelID" Type="int" />
+    <Property Name="NumberSMSManagerText" Type="nvarchar" MaxLength="500" />
+    <Property Name="serverKeyFireBase" Type="nvarchar" MaxLength="1000" />
+    <Property Name="senderIdFireBase" Type="nvarchar" MaxLength="100" />
+    <Property Name="webAddr" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mesStatusMessage">
+    <Key>
+      <PropertyRef Name="pkfStatusMessage" />
+    </Key>
+    <Property Name="pkfStatusMessage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statusMessage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="statusMessageCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="memo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="changeDateEN" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesTypeMessage">
+    <Key>
+      <PropertyRef Name="pkfTypeMessage" />
+    </Key>
+    <Property Name="pkfTypeMessage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeMessage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="typeMessageCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="memo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="changeDateEN" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesUser">
+    <Key>
+      <PropertyRef Name="pkfUser" />
+    </Key>
+    <Property Name="pkfUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="number" Type="nvarchar" MaxLength="30" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="famile" Type="nvarchar" MaxLength="200" />
+    <Property Name="pic" Type="varbinary(max)" />
+    <Property Name="picName" Type="nvarchar" MaxLength="50" />
+    <Property Name="pass" Type="nvarchar" MaxLength="50" />
+    <Property Name="userName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActiveCode" Type="int" />
+    <Property Name="UserActive" Type="bit" />
+    <Property Name="UserCreateDate" Type="datetime" />
+    <Property Name="UserExpireDate" Type="datetime" />
+    <Property Name="DeactiveAdministrator" Type="bit" />
+    <Property Name="PublicKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrivateKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrivateKeyRefresh" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrivateKeyExpire" Type="datetime" />
+    <Property Name="tokenFireBase" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="mesVersioning">
+    <Key>
+      <PropertyRef Name="pkfVersioning" />
+    </Key>
+    <Property Name="pkfVersioning" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VersionCode" Type="int" Nullable="false" />
+    <Property Name="VersionName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ForceInstalling" Type="bit" Nullable="false" />
+    <Property Name="VersionDescription" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_mesDocument_mesDocumentType">
+    <End Role="mesDocumentType" Type="Self.mesDocumentType" Multiplicity="1" />
+    <End Role="mesDocument" Type="Self.mesDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesDocumentType">
+        <PropertyRef Name="pkfDocumentType" />
+      </Principal>
+      <Dependent Role="mesDocument">
+        <PropertyRef Name="FkfDocumentType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesDocument_mesMessage">
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="1" />
+    <End Role="mesDocument" Type="Self.mesDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesMessage">
+        <PropertyRef Name="pkfMessage" />
+      </Principal>
+      <Dependent Role="mesDocument">
+        <PropertyRef Name="FkfMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesLogin_mesUser">
+    <End Role="mesUser" Type="Self.mesUser" Multiplicity="1" />
+    <End Role="mesLogin" Type="Self.mesLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesUser">
+        <PropertyRef Name="pkfUser" />
+      </Principal>
+      <Dependent Role="mesLogin">
+        <PropertyRef Name="FkfUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesCompany">
+    <End Role="mesCompany" Type="Self.mesCompany" Multiplicity="0..1" />
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesCompany">
+        <PropertyRef Name="pkfCompany" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfCompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesDocument">
+    <End Role="mesDocument" Type="Self.mesDocument" Multiplicity="0..1" />
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesDocument">
+        <PropertyRef Name="pkfDocument" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfDocument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesStatusMessage">
+    <End Role="mesStatusMessage" Type="Self.mesStatusMessage" Multiplicity="0..1" />
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesStatusMessage">
+        <PropertyRef Name="pkfStatusMessage" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfStatusMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesTypeMessage">
+    <End Role="mesTypeMessage" Type="Self.mesTypeMessage" Multiplicity="0..1" />
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesTypeMessage">
+        <PropertyRef Name="pkfTypeMessage" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfTypeMessage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesMessage_mesUser">
+    <End Role="mesUser" Type="Self.mesUser" Multiplicity="0..1" />
+    <End Role="mesMessage" Type="Self.mesMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesUser">
+        <PropertyRef Name="pkfUser" />
+      </Principal>
+      <Dependent Role="mesMessage">
+        <PropertyRef Name="FkfUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="mesCheckOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FkfUser" Type="int" Mode="In" />
+    <Parameter Name="IsOnline" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="mesCompanyChange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="number" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChangeDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="mesMessageChange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="ChangeDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="mesMessageShow" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="ChangeDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="mesStatusMessageChange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ChangeDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="mesTypeMessageChange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ChangeDate" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBSadraAfzarMessengerModelStoreContainer">
+    <EntitySet Name="mesCompany" EntityType="Self.mesCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesCompanyUser" EntityType="Self.mesCompanyUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesDocument" EntityType="Self.mesDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesDocumentType" EntityType="Self.mesDocumentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesLogin" EntityType="Self.mesLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesMessage" EntityType="Self.mesMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesPanel" EntityType="Self.mesPanel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesSetting" EntityType="Self.mesSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesStatusMessage" EntityType="Self.mesStatusMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesTypeMessage" EntityType="Self.mesTypeMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesUser" EntityType="Self.mesUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesVersioning" EntityType="Self.mesVersioning" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_mesDocument_mesDocumentType" Association="Self.FK_mesDocument_mesDocumentType">
+      <End Role="mesDocumentType" EntitySet="mesDocumentType" />
+      <End Role="mesDocument" EntitySet="mesDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesDocument_mesMessage" Association="Self.FK_mesDocument_mesMessage">
+      <End Role="mesMessage" EntitySet="mesMessage" />
+      <End Role="mesDocument" EntitySet="mesDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesLogin_mesUser" Association="Self.FK_mesLogin_mesUser">
+      <End Role="mesUser" EntitySet="mesUser" />
+      <End Role="mesLogin" EntitySet="mesLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesCompany" Association="Self.FK_mesMessage_mesCompany">
+      <End Role="mesCompany" EntitySet="mesCompany" />
+      <End Role="mesMessage" EntitySet="mesMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesDocument" Association="Self.FK_mesMessage_mesDocument">
+      <End Role="mesDocument" EntitySet="mesDocument" />
+      <End Role="mesMessage" EntitySet="mesMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesStatusMessage" Association="Self.FK_mesMessage_mesStatusMessage">
+      <End Role="mesStatusMessage" EntitySet="mesStatusMessage" />
+      <End Role="mesMessage" EntitySet="mesMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesTypeMessage" Association="Self.FK_mesMessage_mesTypeMessage">
+      <End Role="mesTypeMessage" EntitySet="mesTypeMessage" />
+      <End Role="mesMessage" EntitySet="mesMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesMessage_mesUser" Association="Self.FK_mesMessage_mesUser">
+      <End Role="mesUser" EntitySet="mesUser" />
+      <End Role="mesMessage" EntitySet="mesMessage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

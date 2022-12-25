@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{B20CAA1C-668D-4996-B14A-08E080A78CD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{592264B1-F02E-4E05-A44C-03941E0120A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{D62B356E-2F01-4C17-B650-3B63CFF082E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.DAL", "Messenger.DAL\Messenger.DAL.csproj", "{012098D2-76FE-415E-A459-36E2CC4C1ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.Repository", "Messenger.Repository\Messenger.Repository.csproj", "{3985BF9A-E43B-4953-9AAB-5847988D1E4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.AppService", "Messenger.AppService\Messenger.AppService.csproj", "{36FE82B0-91B3-4143-B64B-14F2EC66324A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.WebApi", "Messenger.WebApi\Messenger.WebApi.csproj", "{2C98A59D-33A2-4691-AE37-E6BF2623C233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger.SMSPanel", "Messenger.SMSPanel\Messenger.SMSPanel.csproj", "{75DC4161-B3C8-4FA6-8315-5DB99B4AC249}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messenger.WebApiCore", "Messenger.WebApiCore\Messenger.WebApiCore.csproj", "{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messenger.TestSignalR", "Messenger.TestSignalR\Messenger.TestSignalR.csproj", "{BEB2F4FD-8852-45B1-9993-875A7690CCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinConnectionString", "WinConnectionString\WinConnectionString.csproj", "{1FDBA4C9-AA37-403E-A95C-6309975CF5B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{012098D2-76FE-415E-A459-36E2CC4C1ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012098D2-76FE-415E-A459-36E2CC4C1ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012098D2-76FE-415E-A459-36E2CC4C1ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012098D2-76FE-415E-A459-36E2CC4C1ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3985BF9A-E43B-4953-9AAB-5847988D1E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3985BF9A-E43B-4953-9AAB-5847988D1E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3985BF9A-E43B-4953-9AAB-5847988D1E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3985BF9A-E43B-4953-9AAB-5847988D1E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FE82B0-91B3-4143-B64B-14F2EC66324A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FE82B0-91B3-4143-B64B-14F2EC66324A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FE82B0-91B3-4143-B64B-14F2EC66324A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FE82B0-91B3-4143-B64B-14F2EC66324A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C98A59D-33A2-4691-AE37-E6BF2623C233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C98A59D-33A2-4691-AE37-E6BF2623C233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C98A59D-33A2-4691-AE37-E6BF2623C233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C98A59D-33A2-4691-AE37-E6BF2623C233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DC4161-B3C8-4FA6-8315-5DB99B4AC249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DC4161-B3C8-4FA6-8315-5DB99B4AC249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DC4161-B3C8-4FA6-8315-5DB99B4AC249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DC4161-B3C8-4FA6-8315-5DB99B4AC249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB2F4FD-8852-45B1-9993-875A7690CCD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB2F4FD-8852-45B1-9993-875A7690CCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB2F4FD-8852-45B1-9993-875A7690CCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB2F4FD-8852-45B1-9993-875A7690CCD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDBA4C9-AA37-403E-A95C-6309975CF5B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDBA4C9-AA37-403E-A95C-6309975CF5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDBA4C9-AA37-403E-A95C-6309975CF5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDBA4C9-AA37-403E-A95C-6309975CF5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{012098D2-76FE-415E-A459-36E2CC4C1ED1} = {B20CAA1C-668D-4996-B14A-08E080A78CD8}
+		{3985BF9A-E43B-4953-9AAB-5847988D1E4B} = {B20CAA1C-668D-4996-B14A-08E080A78CD8}
+		{36FE82B0-91B3-4143-B64B-14F2EC66324A} = {D62B356E-2F01-4C17-B650-3B63CFF082E2}
+		{2C98A59D-33A2-4691-AE37-E6BF2623C233} = {FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}
+		{75DC4161-B3C8-4FA6-8315-5DB99B4AC249} = {FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}
+		{27FBDFBD-3C5C-4139-AFAB-92EFE7A97FCF} = {FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}
+		{BEB2F4FD-8852-45B1-9993-875A7690CCD3} = {FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}
+		{1FDBA4C9-AA37-403E-A95C-6309975CF5B1} = {FDC5EF8D-A792-4BAE-B752-0D161B5B0E02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A3D8F15-66D8-4DEC-80A1-16539221A446}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.85.61/sadracollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Messenger.DAL\\Messenger.DAL.csproj
+		SccProjectTopLevelParentUniqueName1 = Messenger.sln
+		SccProjectName1 = Messenger.DAL
+		SccLocalPath1 = Messenger.DAL
+		SccProjectUniqueName2 = Messenger.Repository\\Messenger.Repository.csproj
+		SccProjectTopLevelParentUniqueName2 = Messenger.sln
+		SccProjectName2 = Messenger.Repository
+		SccLocalPath2 = Messenger.Repository
+		SccProjectUniqueName3 = Messenger.AppService\\Messenger.AppService.csproj
+		SccProjectTopLevelParentUniqueName3 = Messenger.sln
+		SccProjectName3 = Messenger.AppService
+		SccLocalPath3 = Messenger.AppService
+		SccProjectUniqueName4 = Messenger.WebApi\\Messenger.WebApi.csproj
+		SccProjectTopLevelParentUniqueName4 = Messenger.sln
+		SccProjectName4 = Messenger.WebApi
+		SccLocalPath4 = Messenger.WebApi
+		SccProjectUniqueName5 = Messenger.SMSPanel\\Messenger.SMSPanel.csproj
+		SccProjectTopLevelParentUniqueName5 = Messenger.sln
+		SccProjectName5 = Messenger.SMSPanel
+		SccLocalPath5 = Messenger.SMSPanel
+		SccProjectUniqueName6 = Messenger.WebApiCore\\Messenger.WebApiCore.csproj
+		SccProjectTopLevelParentUniqueName6 = Messenger.sln
+		SccProjectName6 = Messenger.WebApiCore
+		SccLocalPath6 = Messenger.WebApiCore
+		SccProjectUniqueName7 = Messenger.TestSignalR\\Messenger.TestSignalR.csproj
+		SccProjectTopLevelParentUniqueName7 = Messenger.sln
+		SccProjectName7 = Messenger.TestSignalR
+		SccLocalPath7 = Messenger.TestSignalR
+		SccProjectUniqueName8 = WinConnectionString\\WinConnectionString.csproj
+		SccProjectTopLevelParentUniqueName8 = Messenger.sln
+		SccProjectName8 = WinConnectionString
+		SccLocalPath8 = WinConnectionString
+	EndGlobalSection
+EndGlobal

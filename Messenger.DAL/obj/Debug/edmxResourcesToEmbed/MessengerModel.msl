@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBSadraAfzarMessengerModelStoreContainer" CdmEntityContainer="MessengerContext">
+    <FunctionImportMapping FunctionImportName="mesCompanyChange" FunctionName="DBSadraAfzarMessengerModel.Store.mesCompanyChange">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSadraAfzarMessengerModel.mesCompanyChange_Result">
+          <ScalarProperty Name="pkfCompany" ColumnName="pkfCompany" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="CountAll" ColumnName="CountAll" />
+          <ScalarProperty Name="CountSend" ColumnName="CountSend" />
+          <ScalarProperty Name="CountRecive" ColumnName="CountRecive" />
+          <ScalarProperty Name="CountShow" ColumnName="CountShow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mesMessageShow" FunctionName="DBSadraAfzarMessengerModel.Store.mesMessageShow">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSadraAfzarMessengerModel.mesMessageShow_Result">
+          <ScalarProperty Name="pkfMessage" ColumnName="pkfMessage" />
+          <ScalarProperty Name="FkfUser" ColumnName="FkfUser" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="FkfStatusMessage" ColumnName="FkfStatusMessage" />
+          <ScalarProperty Name="FkfTypeMessage" ColumnName="FkfTypeMessage" />
+          <ScalarProperty Name="FkfSource" ColumnName="FkfSource" />
+          <ScalarProperty Name="FkfCompanyId" ColumnName="FkfCompanyId" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="FkfDocument" ColumnName="FkfDocument" />
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+          <ScalarProperty Name="statusMessage" ColumnName="statusMessage" />
+          <ScalarProperty Name="typeMessage" ColumnName="typeMessage" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mesStatusMessageChange" FunctionName="DBSadraAfzarMessengerModel.Store.mesStatusMessageChange">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSadraAfzarMessengerModel.mesStatusMessageChange_Result">
+          <ScalarProperty Name="pkfStatusMessage" ColumnName="pkfStatusMessage" />
+          <ScalarProperty Name="statusMessage" ColumnName="statusMessage" />
+          <ScalarProperty Name="statusMessageCode" ColumnName="statusMessageCode" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mesTypeMessageChange" FunctionName="DBSadraAfzarMessengerModel.Store.mesTypeMessageChange">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSadraAfzarMessengerModel.mesTypeMessageChange_Result">
+          <ScalarProperty Name="pkfTypeMessage" ColumnName="pkfTypeMessage" />
+          <ScalarProperty Name="typeMessage" ColumnName="typeMessage" />
+          <ScalarProperty Name="typeMessageCode" ColumnName="typeMessageCode" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="mesCompanies">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesCompany">
+        <MappingFragment StoreEntitySet="mesCompany">
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="picName" ColumnName="picName" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="serialIdCompany" ColumnName="serialIdCompany" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="pkfCompany" ColumnName="pkfCompany" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesCompanyUsers">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesCompanyUser">
+        <MappingFragment StoreEntitySet="mesCompanyUser">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="validyDateUser" ColumnName="validyDateUser" />
+          <ScalarProperty Name="FkfCompany" ColumnName="FkfCompany" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="pkfCompanyUser" ColumnName="pkfCompanyUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesDocuments">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesDocument">
+        <MappingFragment StoreEntitySet="mesDocument">
+          <ScalarProperty Name="fileSize" ColumnName="fileSize" />
+          <ScalarProperty Name="fileExt" ColumnName="fileExt" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="fileScan" ColumnName="fileScan" />
+          <ScalarProperty Name="FkfDocumentType" ColumnName="FkfDocumentType" />
+          <ScalarProperty Name="FkfMessage" ColumnName="FkfMessage" />
+          <ScalarProperty Name="pkfDocument" ColumnName="pkfDocument" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesDocumentTypes">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesDocumentType">
+        <MappingFragment StoreEntitySet="mesDocumentType">
+          <ScalarProperty Name="documentType" ColumnName="documentType" />
+          <ScalarProperty Name="pkfDocumentType" ColumnName="pkfDocumentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesPanels">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesPanel">
+        <MappingFragment StoreEntitySet="mesPanel">
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PanelName" ColumnName="PanelName" />
+          <ScalarProperty Name="pkfPanel" ColumnName="pkfPanel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesSettings">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesSetting">
+        <MappingFragment StoreEntitySet="mesSetting">
+          <ScalarProperty Name="webAddr" ColumnName="webAddr" />
+          <ScalarProperty Name="senderIdFireBase" ColumnName="senderIdFireBase" />
+          <ScalarProperty Name="serverKeyFireBase" ColumnName="serverKeyFireBase" />
+          <ScalarProperty Name="NumberSMSManagerText" ColumnName="NumberSMSManagerText" />
+          <ScalarProperty Name="NumberSMSManagerPanelID" ColumnName="NumberSMSManagerPanelID" />
+          <ScalarProperty Name="NumberSMSUpdateUser" ColumnName="NumberSMSUpdateUser" />
+          <ScalarProperty Name="NumberSMSAddUser" ColumnName="NumberSMSAddUser" />
+          <ScalarProperty Name="InstallInvitationPanelID" ColumnName="InstallInvitationPanelID" />
+          <ScalarProperty Name="MessageInstallInvitation" ColumnName="MessageInstallInvitation" />
+          <ScalarProperty Name="InvitationPanelID" ColumnName="InvitationPanelID" />
+          <ScalarProperty Name="ShowNotificationRepeat" ColumnName="ShowNotificationRepeat" />
+          <ScalarProperty Name="HelpMainUrl" ColumnName="HelpMainUrl" />
+          <ScalarProperty Name="ShowHelpForm" ColumnName="ShowHelpForm" />
+          <ScalarProperty Name="ContactsInvitationText" ColumnName="ContactsInvitationText" />
+          <ScalarProperty Name="RegistrationFormVisit" ColumnName="RegistrationFormVisit" />
+          <ScalarProperty Name="SendEmailManageTo" ColumnName="SendEmailManageTo" />
+          <ScalarProperty Name="SendEmailManageFrom" ColumnName="SendEmailManageFrom" />
+          <ScalarProperty Name="SendEmailManageUserPass" ColumnName="SendEmailManageUserPass" />
+          <ScalarProperty Name="SendEmailManageUsername" ColumnName="SendEmailManageUsername" />
+          <ScalarProperty Name="SendEmailManagePort" ColumnName="SendEmailManagePort" />
+          <ScalarProperty Name="SendEmailManageHost" ColumnName="SendEmailManageHost" />
+          <ScalarProperty Name="SendEmailManageEnable" ColumnName="SendEmailManageEnable" />
+          <ScalarProperty Name="pkfSetting" ColumnName="pkfSetting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesStatusMessages">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesStatusMessage">
+        <MappingFragment StoreEntitySet="mesStatusMessage">
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="statusMessageCode" ColumnName="statusMessageCode" />
+          <ScalarProperty Name="statusMessage" ColumnName="statusMessage" />
+          <ScalarProperty Name="pkfStatusMessage" ColumnName="pkfStatusMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesTypeMessages">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesTypeMessage">
+        <MappingFragment StoreEntitySet="mesTypeMessage">
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="typeMessageCode" ColumnName="typeMessageCode" />
+          <ScalarProperty Name="typeMessage" ColumnName="typeMessage" />
+          <ScalarProperty Name="pkfTypeMessage" ColumnName="pkfTypeMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesVersionings">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesVersioning">
+        <MappingFragment StoreEntitySet="mesVersioning">
+          <ScalarProperty Name="VersionDescription" ColumnName="VersionDescription" />
+          <ScalarProperty Name="ForceInstalling" ColumnName="ForceInstalling" />
+          <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="pkfVersioning" ColumnName="pkfVersioning" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="mesCheckOnline" FunctionName="DBSadraAfzarMessengerModel.Store.mesCheckOnline" />
+    <EntitySetMapping Name="mesLogins">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesLogin">
+        <MappingFragment StoreEntitySet="mesLogin">
+          <ScalarProperty Name="mobileName" ColumnName="mobileName" />
+          <ScalarProperty Name="androidVersion" ColumnName="androidVersion" />
+          <ScalarProperty Name="appVersion" ColumnName="appVersion" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="disconnectDateTime" ColumnName="disconnectDateTime" />
+          <ScalarProperty Name="connectDateTime" ColumnName="connectDateTime" />
+          <ScalarProperty Name="loginType" ColumnName="loginType" />
+          <ScalarProperty Name="FkfUser" ColumnName="FkfUser" />
+          <ScalarProperty Name="idConnectionSignalR" ColumnName="idConnectionSignalR" />
+          <ScalarProperty Name="pkfLogin" ColumnName="pkfLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="mesMessageChange" FunctionName="DBSadraAfzarMessengerModel.Store.mesMessageChange">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSadraAfzarMessengerModel.mesMessageChange_Result">
+          <ScalarProperty Name="pkfMessage" ColumnName="pkfMessage" />
+          <ScalarProperty Name="FkfUser" ColumnName="FkfUser" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="FkfStatusMessage" ColumnName="FkfStatusMessage" />
+          <ScalarProperty Name="FkfTypeMessage" ColumnName="FkfTypeMessage" />
+          <ScalarProperty Name="FkfSource" ColumnName="FkfSource" />
+          <ScalarProperty Name="FkfCompanyId" ColumnName="FkfCompanyId" />
+          <ScalarProperty Name="sendDate" ColumnName="sendDate" />
+          <ScalarProperty Name="reciveDate" ColumnName="reciveDate" />
+          <ScalarProperty Name="showDate" ColumnName="showDate" />
+          <ScalarProperty Name="ansswerDate" ColumnName="ansswerDate" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="FkfDocument" ColumnName="FkfDocument" />
+          <ScalarProperty Name="replay" ColumnName="replay" />
+          <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+          <ScalarProperty Name="reciveTime" ColumnName="reciveTime" />
+          <ScalarProperty Name="showTime" ColumnName="showTime" />
+          <ScalarProperty Name="ansswerTime" ColumnName="ansswerTime" />
+          <ScalarProperty Name="sendDateEN" ColumnName="sendDateEN" />
+          <ScalarProperty Name="reciveDateEN" ColumnName="reciveDateEN" />
+          <ScalarProperty Name="showDateEN" ColumnName="showDateEN" />
+          <ScalarProperty Name="ansswerDateEN" ColumnName="ansswerDateEN" />
+          <ScalarProperty Name="replayDiscript" ColumnName="replayDiscript" />
+          <ScalarProperty Name="IsFireBase" ColumnName="IsFireBase" />
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="mesMessages">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesMessage">
+        <MappingFragment StoreEntitySet="mesMessage">
+          <ScalarProperty Name="changeDateEN" ColumnName="changeDateEN" />
+          <ScalarProperty Name="IsFireBase" ColumnName="IsFireBase" />
+          <ScalarProperty Name="replayDiscript" ColumnName="replayDiscript" />
+          <ScalarProperty Name="ansswerDateEN" ColumnName="ansswerDateEN" />
+          <ScalarProperty Name="showDateEN" ColumnName="showDateEN" />
+          <ScalarProperty Name="reciveDateEN" ColumnName="reciveDateEN" />
+          <ScalarProperty Name="sendDateEN" ColumnName="sendDateEN" />
+          <ScalarProperty Name="ansswerTime" ColumnName="ansswerTime" />
+          <ScalarProperty Name="showTime" ColumnName="showTime" />
+          <ScalarProperty Name="reciveTime" ColumnName="reciveTime" />
+          <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+          <ScalarProperty Name="replay" ColumnName="replay" />
+          <ScalarProperty Name="FkfDocument" ColumnName="FkfDocument" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="ansswerDate" ColumnName="ansswerDate" />
+          <ScalarProperty Name="showDate" ColumnName="showDate" />
+          <ScalarProperty Name="reciveDate" ColumnName="reciveDate" />
+          <ScalarProperty Name="sendDate" ColumnName="sendDate" />
+          <ScalarProperty Name="FkfCompanyId" ColumnName="FkfCompanyId" />
+          <ScalarProperty Name="FkfSource" ColumnName="FkfSource" />
+          <ScalarProperty Name="FkfTypeMessage" ColumnName="FkfTypeMessage" />
+          <ScalarProperty Name="FkfStatusMessage" ColumnName="FkfStatusMessage" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="FkfUser" ColumnName="FkfUser" />
+          <ScalarProperty Name="pkfMessage" ColumnName="pkfMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesUsers">
+      <EntityTypeMapping TypeName="DBSadraAfzarMessengerModel.mesUser">
+        <MappingFragment StoreEntitySet="mesUser">
+          <ScalarProperty Name="tokenFireBase" ColumnName="tokenFireBase" />
+          <ScalarProperty Name="PrivateKeyExpire" ColumnName="PrivateKeyExpire" />
+          <ScalarProperty Name="PrivateKeyRefresh" ColumnName="PrivateKeyRefresh" />
+          <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+          <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+          <ScalarProperty Name="DeactiveAdministrator" ColumnName="DeactiveAdministrator" />
+          <ScalarProperty Name="UserExpireDate" ColumnName="UserExpireDate" />
+          <ScalarProperty Name="UserCreateDate" ColumnName="UserCreateDate" />
+          <ScalarProperty Name="UserActive" ColumnName="UserActive" />
+          <ScalarProperty Name="ActiveCode" ColumnName="ActiveCode" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="picName" ColumnName="picName" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="famile" ColumnName="famile" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="pkfUser" ColumnName="pkfUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

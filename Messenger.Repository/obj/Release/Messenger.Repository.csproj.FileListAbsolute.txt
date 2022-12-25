@@ -1,0 +1,14 @@
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\Messenger.Repository.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\Messenger.Repository.pdb
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\EntityFramework.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\EntityFramework.SqlServer.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\Messenger.DAL.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\Messenger.DAL.pdb
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\Messenger.DAL.dll.config
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\EntityFramework.xml
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\bin\Release\EntityFramework.SqlServer.xml
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\obj\Release\Messenger.Repository.csprojAssemblyReference.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\obj\Release\Messenger.Repository.csproj.CoreCompileInputs.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\obj\Release\Messenger.Repository.csproj.CopyComplete
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\obj\Release\Messenger.Repository.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.Repository\obj\Release\Messenger.Repository.pdb

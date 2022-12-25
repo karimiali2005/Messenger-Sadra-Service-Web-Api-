@@ -1,0 +1,7 @@
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\bin\Release\Messenger.SMSPanel.dll.config
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\bin\Release\Messenger.SMSPanel.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\bin\Release\Messenger.SMSPanel.pdb
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\obj\Release\Messenger.SMSPanel.csprojAssemblyReference.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\obj\Release\Messenger.SMSPanel.csproj.CoreCompileInputs.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\obj\Release\Messenger.SMSPanel.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.SMSPanel\obj\Release\Messenger.SMSPanel.pdb

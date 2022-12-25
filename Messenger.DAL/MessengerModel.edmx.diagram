@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f57f7bbbb364416eaa1c7a208e34879d" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesCompany" Width="1.5" PointX="0.75" PointY="13.875" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesCompanyUser" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesDocument" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesDocumentType" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesPanel" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesSetting" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesStatusMessage" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesTypeMessage" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesVersioning" Width="1.5" PointX="9.75" PointY="0.75" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesDocument_mesDocumentType" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesLogin" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesMessage" Width="1.5" PointX="10.5" PointY="5.5" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesCompany" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesDocument_mesMessage" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesDocument" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesStatusMessage" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesTypeMessage" />
+        <EntityTypeShape EntityType="DBSadraAfzarMessengerModel.mesUser" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesLogin_mesUser" />
+        <AssociationConnector Association="DBSadraAfzarMessengerModel.FK_mesMessage_mesUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

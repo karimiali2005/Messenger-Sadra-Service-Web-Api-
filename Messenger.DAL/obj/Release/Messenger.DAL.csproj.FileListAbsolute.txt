@@ -1,0 +1,12 @@
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\Messenger.DAL.dll.config
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\Messenger.DAL.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\Messenger.DAL.pdb
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\EntityFramework.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\EntityFramework.xml
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\obj\Release\Messenger.DAL.csprojAssemblyReference.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\obj\Release\Messenger.DAL.csproj.CoreCompileInputs.cache
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\obj\Release\Messenger.DAL.csproj.CopyComplete
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\obj\Release\Messenger.DAL.dll
+D:\WorkSpacesSadra\Karimi\MessengerProject\Messenger\Messenger.DAL\obj\Release\Messenger.DAL.pdb
